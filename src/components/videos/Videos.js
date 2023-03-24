@@ -1,9 +1,13 @@
+import { useEffect } from "react";
+import { useState } from "react";
 import { useGetVideosQuery } from "../../redux/features/api/apiSlice";
 import Error from "../ui/Error";
 import VideoLoader from "../ui/loaders/VideoLoader";
 import Video from "./Video";
 
 export default function Videos() {
+  const [request, setRequest] = useState(false);
+
   const { isError, isLoading, data: videos } = useGetVideosQuery();
 
   let content = null;

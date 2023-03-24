@@ -10,8 +10,11 @@ import RelatedVideos from "../video/related/RelatedVideos";
 
 export default function Video() {
   const { videoId } = useParams();
-  console.log(videoId);
-  const { data: video, isLoading, isError } = useGetVideoQuery(videoId);
+  const {
+    data: video,
+    isLoading,
+    isError,
+  } = useGetVideoQuery(videoId, { refetchOnMountOrArgChange: 5 });
 
   let content = null;
 

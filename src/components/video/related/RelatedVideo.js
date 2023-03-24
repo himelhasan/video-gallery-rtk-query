@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 export default function RelatedVideo({ video }) {
-  const { id, title, duration, description, author, views, date, thumbnail } = video;
+  const { id, title, duration, author, views, date, thumbnail } = video;
 
   return (
     <div className="w-full flex flex-row gap-2 mb-4">
